@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("clone a code"){
             steps{
+                println("clone a code")
                 git branch: "master"
-                url:"https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git"
+                url: "https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git"
             }
         }
-    }
-    stages{
+        
         stage("build"){
             steps{
                 println("building the code")
