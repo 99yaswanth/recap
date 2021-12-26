@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("clone a code"){
             steps{
-                println("clone a code")
+                println "clone a code"
                 git branch: "${BRANCH}",
                 url: 'https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git'
             }
@@ -14,14 +14,14 @@ pipeline{
 
         stage("build"){
             steps{
-                println("building the code")
+                println "building the code"
                 sh "mvn clean package"
                 sh "ls -l"
             }
         }
         stage("uploading the artifacts"){
             steps{
-                println("uploading artifacts to s3")
+                println "uploading artifacts to s3"
             }
         }
     }
