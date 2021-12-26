@@ -22,6 +22,7 @@ pipeline{
         stage("uploading the artifacts"){
             steps{
                 println "uploading artifacts to s3"
+                sh "aws s3 cp target/hello-*.war s3://yashwanth24/${BRANCH}/"
             }
         }
     }
