@@ -21,7 +21,7 @@ pipeline{
                 println "copying artifacts "
                // sh "ssh -i /tmp/nvirginia.pem ec2-user@${SERVER_IP} "\systemctl status tomcat\""
                 sh "scp -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem hello-${BUILD_NUMBER}.war ec2-user@${SERVER_IP}:/tmp/"
-               // sh "ssh -i /tmp/nvirginia1.pem ec2-user@${SERVER_IP} \"sudo cp /tmp/hello-${BUILD_NUMBER}.war /var/lib/tomcat/webapps\""
+                sh "ssh -i /tmp/nvirginia1.pem ec2-user@${SERVER_IP} \"sudo cp /tmp/hello-${BUILD_NUMBER}.war /var/lib/tomcat/webapps\""
 
             }
         }
